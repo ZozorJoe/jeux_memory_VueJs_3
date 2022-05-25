@@ -1,0 +1,101 @@
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
+    .container {
+        box-shadow: 0 0 0px gray;
+        padding: 5px;
+        height: auto;
+    }
+    .config {
+        height: 50px;
+        width: 100%;
+        text-align: left;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        border: 1px solid rgba(0, 0, 0, .125);
+        border-radius: .25rem;
+    }
+    .fireworks {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        overflow: hidden;
+    }
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        perspective: 1000px;
+        .rotate {
+            transform: rotateY(-180deg);
+        }
+        .card {
+            margin: 0 auto;
+            border: 1px solid black;
+            width: 200px;
+            height: 200px;
+            cursor: pointer;
+            border-radius: 5px;
+            transform-style: preserve-3d;
+            transition: 0.3s all ease-in-out;
+            .card_front {
+                backface-visibility: hidden;
+                width: 100%;
+                height: 100%;
+                cursor: default;
+                transform: rotateY(180deg);
+            }
+            img {
+                width: 100%;
+                height: 168px;
+                ;
+            }
+        }
+    }
+}
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
+@media screen and (max-width:1000px) {
+    #app .container .cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width:448px) {
+    #app .container .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #app .cards .card {
+        width: 150px;
+        height: 150px;
+    }
+    #app .cards .card img {
+        width: 100%;
+        height: 120px;
+    }
+}

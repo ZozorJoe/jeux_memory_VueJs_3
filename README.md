@@ -1,5 +1,8 @@
 # memory
 
+ contact:
+	e-mail:nantejoe@gmail.com
+	whatsApp:+261347052078
 ## Project setup
 ```
 yarn install
